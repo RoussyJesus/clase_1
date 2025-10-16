@@ -125,6 +125,35 @@ body {
     max-width: 1300px;
     animation: fadeIn 1s ease;
 }
+.input-group {
+margin-bottom: 15px;
+}
+.input-group label{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.input-field{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #5f5f5f;
+    border-radius: 8px;
+}
+.btn-generar{
+    background-color: #0011ff;
+    color: #eaf2ff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor:pointer;
+    width: 100%;
+}
+.btn-generar:hover{
+    background-color: #0020aa;
+}
+
+
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(15px); }
