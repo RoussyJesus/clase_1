@@ -441,3 +441,68 @@ img:hover {
         padding: 20px;
     }
 }
+/* ---
+   ESTILOS ADICIONALES PARA LA PÁGINA "PROYECTO"
+   (Añadir al final de style.css)
+--- */
+
+/* 1. Contenedor de Rejilla (Grid) */
+.page-container-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que se apilen en pantallas pequeñas */
+    justify-content: center;
+    gap: 25px;
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 1400px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* 2. Tarjeta del Gráfico (70% del ancho) */
+.content-graph {
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid var(--color-borde);
+    box-shadow: 0 0 15px var(--color-sombra);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    flex-grow: 2; /* Crece el doble que la barra lateral */
+    flex-basis: 60%; /* Intenta ocupar el 60-70% */
+    min-width: 350px;
+}
+
+/* 3. Barra Lateral (30% del ancho) */
+.content-sidebar {
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid var(--color-borde);
+    box-shadow: 0 0 15px var(--color-sombra);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    flex-grow: 1;
+    flex-basis: 30%;
+    min-width: 300px;
+}
+
+.content-graph:hover,
+.content-sidebar:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 25px var(--color-sombra-hover);
+}
+
+
+@media (max-width: 900px) {
+    .page-container-grid {
+        flex-direction: column;
+    }
+    .content-graph,
+    .content-sidebar {
+        flex-basis: 100%; 
+    }
+}
