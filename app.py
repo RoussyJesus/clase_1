@@ -3,7 +3,7 @@ from dash import html, dcc
 
 app = dash.Dash(__name__, use_pages=True)
 
-orden_paginas = ["Inicio", "Página", "Tarea","Pagina1","Crecimiento_poblacion","Campo_Vectorial"]
+orden_paginas = ["Inicio", "Página", "Tarea","Pagina1","Crecimiento_poblacion","Campo_Vectorial","Proyecto"]
 
 app.layout = html.Div([
     html.H1("Técnicas de Modelamiento Matemático", className='app-header'),
