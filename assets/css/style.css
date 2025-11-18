@@ -1,7 +1,14 @@
+/* ---
+   TEMA OSCURO PROFESIONAL (Paleta Violeta)
+   Un modo oscuro sutil, sin "brillo" neón.
+--- */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 body {
     font-family: 'Outfit', sans-serif;
-    background: linear-gradient(135deg, #eaf2ff, #f9fbff);
+    /* Fondo oscuro: un gradiente de azul casi negro */
+    background: linear-gradient(135deg, #0a101f, #05070f);
+    color: #e0e0e0; /* Texto por defecto es claro */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -9,7 +16,8 @@ body {
 
 
 .app-header {
-    background: linear-gradient(270deg, #0011ff, #006eff, #009dff);
+    /* Gradiente de violeta sutil */
+    background: linear-gradient(270deg, #0d42d3, #5444ad, #0e42d3);
     background-size: 600% 600%;
     animation: headerGradient 10s ease infinite;
     color: white;
@@ -18,8 +26,12 @@ body {
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1.2px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-    border-bottom: 4px solid #00e1ff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Sombra de texto normal */
+    
+    /* Borde sutil, sin brillo */
+    border-bottom: 4px solid #29b20f;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
     position: relative;
     overflow: hidden;
     z-index: 2; 
@@ -31,18 +43,9 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-
+/* Efecto de brillo de cabecera eliminado */
 .app-header::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(120deg, rgba(255,255,255,0.3) 0%, transparent 80%);
-    transform: skewX(-30deg);
-    animation: shine 6s infinite linear;
-    pointer-events: none;
+    display: none;
 }
 
 @keyframes shine {
@@ -52,9 +55,11 @@ body {
 
 
 .navigation {
-    background-color: #0020aa;
+    /* La navegación es casi negra para mezclarse con el fondo */
+    background-color: #050a14;
     padding: 12px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    /* Sombra estándar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
     position: sticky;
     top: 0;
@@ -69,12 +74,13 @@ body {
 
 
 .nav-link {
-    background-color: white;
-    color: #0020aa;
+    background-color: transparent; /* Fondo transparente */
+    color: #f0f0f0; /* Color de texto claro */
     font-weight: 600;
     padding: 10px 20px;
     border-radius: 30px;
-    border: 2px solid #0020aa;
+    /* Borde gris oscuro sutil */
+    border: 2px solid #333;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
     cursor: pointer;
@@ -83,74 +89,86 @@ body {
     z-index: 5;
 }
 
-
-.nav-link::before {
-    content: "";
-    position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0,255,255,0.2), transparent);
-    transition: 0.5s;
-    pointer-events: none; 
-}
-
-.nav-link:hover::before {
-    left: 100%;
-}
+.nav-link::before { display: none; }
 
 .nav-link:hover {
-    background-color: #00cfff;
-    color: white;
+    background-color: #08e263; /* Acento Violeta */
+    color: #FFFFFF;
     transform: scale(1.1);
+    border-color: #9B59B6; /* Acento Violeta */
+    /* Sombra estándar */
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 
 .nav-link.active {
-    background-color: #00bfff;
-    color: white;
+    background-color: #8E44AD; /* Violeta principal */
+    color: #FFFFFF; /* Texto claro */
     font-weight: 700;
-    border-color: #00bfff;
+    border-color: #8E44AD; /* Violeta principal */
     transform: scale(1.08);
+    /* Sombra estándar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 
 .page-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: center; /* Centrado se ve mejor */
     gap: 25px;
     padding: 30px;
     margin: 0 auto;
-    max-width: 1300px;
+    max-width: 1400px; /* Un poco más de espacio */
     animation: fadeIn 1s ease;
 }
 .input-group {
-margin-bottom: 15px;
+margin-bottom: 20px; /* Más espacio */
 }
 .input-group label{
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px; /* Más espacio */
     font-weight: bold;
+    color: #e0e0e0; /* Texto de etiqueta claro */
 }
 .input-field{
     width: 100%;
-    padding: 8px;
+    padding: 12px; /* Más padding */
     box-sizing: border-box;
-    border: 1px solid #5f5f5f;
+    border: 1px solid #5f5f5f; /* Borde gris oscuro */
     border-radius: 8px;
+    background-color: #1a202c; /* Fondo de input oscuro */
+    color: #f0f0f0; /* Texto de input claro */
+    transition: all 0.3s ease;
 }
+
+/* :focus sutil, sin brillo */
+.input-field:focus {
+    outline: none;
+    border-color: #9B59B6; /* Acento Violeta */
+    box-shadow: 0 0 5px rgba(158, 15, 214, 0.5); /* Halo sutil */
+}
+
 .btn-generar{
-    background-color: #0011ff;
+    background-color: #0bbd90; /* Violeta principal */
     color: #eaf2ff;
     border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 12px 15px; /* Más padding */
+    border-radius: 8px; /* Bordes más redondeados */
     cursor:pointer;
     width: 100%;
+    font-size: 1.1rem; /* Más grande */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    /* Sombra estándar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .btn-generar:hover{
-    background-color: #0020aa;
+    /* Sombra estándar */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transform: scale(1.02);
+    background-color: #09ff67; /* Violeta más oscuro */
 }
 
 
@@ -162,12 +180,17 @@ margin-bottom: 15px;
 
 
 .content {
-    background-color: white;
+    /* Fondo de tarjeta oscuro */
+    background-color: #0c162b;
     border-radius: 15px;
-    padding: 25px;
+    padding: 25px 30px; /* Más padding horizontal */
     flex: 1;
     min-width: 350px;
+    max-width: 700px; /* Previene que las tarjetas sean muy anchas */
+    /* Borde y sombra sutil */
+    border: 1px solid #7A3B97; /* Borde violeta oscuro */
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -175,35 +198,29 @@ margin-bottom: 15px;
 
 .content:hover {
     transform: translateY(-8px);
+    /* Sombra estándar más intensa en hover */
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
+/* Efecto de brillo de tarjeta eliminado */
 .content::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 15px;
-    background: linear-gradient(45deg, transparent, rgba(0,150,255,0.3), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none; 
-}
-
-.content:hover::after {
-    opacity: 1;
+    display: none;
 }
 
 
 .title {
     text-align: center;
-    color: #0020aa;
+    /* Título con color lavanda */
+    color: #21cc69; /* Lavanda */
     font-size: 22px;
     margin-top: 0;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #00cfff;
+    margin-bottom: 25px; /* Más espacio */
+    border-bottom: 2px solid #9B59B6; /* Acento Violeta */
     display: inline-block;
     padding-bottom: 4px;
     animation: fadeSlide 1s ease;
+    /* Sombra de texto eliminada */
+    text-shadow: none;
 }
 
 @keyframes fadeSlide {
@@ -211,9 +228,190 @@ margin-bottom: 15px;
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* ---
+   ANIMACIONES DE TEXTO Y TÍTULO DE LA PÁGINA DE INICIO (SIMPLIFICADAS)
+--- */
+
+/* Animación de "Pulso" Neón eliminada */
+@keyframes neon-text-pulse {
+    from { text-shadow: none; }
+    to { text-shadow: none; }
+}
+
+.welcome-title {
+    text-align: center;
+    color: #17a2ff; /* Lavanda Título */
+    font-size: 2rem; /* Más grande que un .title normal */
+    font-family: 'Righteous', sans-serif; /* Fuente Vistosa */
+    font-weight: 700;
+    margin-top: 20px;
+    text-shadow: none; /* Sin brillo */
+    animation: none; /* Sin animación de pulso */
+    /* Asegura que ocupe el ancho completo */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.welcome-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    font-style: italic;
+    width: 100%;
+    animation: none; /* Sin animación de brillo */
+}
+
+/* Animación de "Brillo" Sutil eliminada */
+@keyframes neon-text-glow {
+    from { text-shadow: none; }
+    to { text-shadow: none; }
+}
+
+/* Animación para Gradiente de Texto eliminada */
+@keyframes text-gradient-shift {
+    from { background-position: 0% 50%; }
+    to { background-position: 0% 50%; }
+}
+
+.intro-text {
+    color: #e0e0e0; /* Color de texto normal */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    /* Animación de gradiente eliminada */
+}
+
+/* Estilizamos la lista de "Qué aprenderás" */
+.intro-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.intro-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #7A3B97; /* Borde violeta oscuro */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra estándar */
+    flex: 1; /* Permite que la imagen sea flexible */
+    min-width: 250px;
+}
+.intro-list {
+    flex: 2; /* La lista toma más espacio */
+    min-width: 300px;
+}
+.intro-list li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    position: relative;
+    padding-left: 30px;
+}
+/* Viñeta de check violeta */
+.intro-list li::before {
+    content: "✓"; /* Ícono de check */
+    color: #9B59B6; /* Color Violeta */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-shadow: none; /* Sin brillo */
+}
+
+/* REGLA para items de la lista de Fundamentos (sin animación) */
+.intro-list-animated li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    position: relative;
+    padding-left: 30px;
+    animation: none; /* Sin animación de brillo */
+}
+/* Usamos la misma viñeta de check */
+.intro-list-animated li::before {
+    content: "✓"; /* Ícono de check */
+    color: #9B59B6; /* Color Violeta */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-shadow: none; /* Sin brillo */
+}
+
+
+/* ---
+   ESTILOS PARA EL TEXTO DE MARKDOWN (Página.py / Tarea.py)
+--- */
+.text-content {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #e0e0e0; /* Asegura texto claro */
+    margin-bottom: 20px; /* Espacio entre párrafos */
+}
+
+/* Colorear el MathJax para que coincida con el tema */
+.text-content .MathJax {
+    color: #21cc69; /* Lavanda */
+    font-weight: bold;
+    text-shadow: none; /* Sin brillo */
+}
+
+
+/* ---
+   ESTILOS para el contenedor de gráficos (Página de Inicio)
+--- */
+/* NUEVA clase para el gráfico de espiral en el contenedor de intro */
+.intro-graph-item {
+    width: 100%;
+    max-width: 300px;
+    flex: 1; /* Permite que el gráfico sea flexible */
+    min-width: 250px;
+}
+/* Contenedor para múltiples gráficos */
+.graph-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.graph-item-half {
+    flex: 1; /* Dos gráficos uno al lado del otro */
+    min-width: 300px;
+}
+.graph-title, .closing-title {
+    color: #21cc69; /* Lavanda Título */
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: none; /* Sin brillo */
+    animation: none; /* Sin animación de pulso */
+    font-family: 'Righteous', sans-serif; /* <-- FUENTE AÑADIDA */
+    font-size: 1.5rem; /* 24px */
+}
+
+.closing-text {
+    font-size: 1.2rem; /* Un poco más grande */
+    line-height: 1.7;
+    text-align: center;
+    max-width: 700px; /* Centrado y legible */
+    margin: 0 auto; /* Centrar el bloque de texto */
+    font-family: 'Righteous', sans-serif; /* <-- FUENTE AÑADIDA */
+
+    /* Animación de gradiente eliminada */
+    color: #e0e0e0; /* Color de texto normal */
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    animation: none;
+}
+
 
 img {
     border-radius: 10px;
+    /* Sombra estándar */
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     z-index: 1;
@@ -221,6 +419,7 @@ img {
 
 img:hover {
     transform: scale(1.03);
+    /* Sombra estándar más intensa */
     box-shadow: 0 5px 12px rgba(0,0,0,0.25);
 }
 
@@ -233,6 +432,8 @@ img:hover {
 
     .content {
         width: 90%;
+        min-width: unset; /* Arreglo para móviles */
+        padding: 20px;
     }
 
     .app-header {
