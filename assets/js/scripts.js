@@ -1,26 +1,49 @@
-/**
- * Script para gestionar el enlace de navegación activo.
- *
- * Este script se ejecuta cuando el contenido de la página está cargado.
- * Compara la ruta actual del navegador con los enlaces de la barra
- * de navegación y aplica la clase 'active' al enlace correspondiente.
- */
 document.addEventListener('DOMContentLoaded', () => {
-    // Obtiene la ruta de la página actual (ej. "/Pagina1")
-    const currentPath = window.location.pathname;
 
-    // Obtiene todos los enlaces de navegación
-    const navLinks = document.querySelectorAll('.nav-link');
+    const updateActiveState = () => {
+        const currentPath = decodeURIComponent(window.location.pathname);
 
-    navLinks.forEach(link => {
-        // Usa el objeto URL para obtener fácilmente la ruta del enlace
-        const linkPath = new URL(link.href).pathname;
+        const links = document.querySelectorAll('.nav-link, .dropdown-item');
+        const triggers = document.querySelectorAll('.dropdown-trigger');
+        const dropdowns = document.querySelectorAll('.dropdown');
 
-        // Comprueba si la ruta del enlace coincide con la ruta actual
-        if (linkPath === currentPath) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active'); // Asegura que los otros no estén activos
+        links.forEach(el => el.classList.remove('active'));
+        triggers.forEach(el => el.classList.remove('active'));
+        dropdowns.forEach(el => el.classList.remove('dropdown-open'));
+
+        links.forEach(link => {
+            if (link.tagName === 'A' && link.getAttribute('href')) {
+                const linkHref = link.getAttribute('href');
+
+                if (linkHref === currentPath) {
+                    link.classList.add('active');
+
+                    const parentDropdown = link.closest('.dropdown');
+                    if (parentDropdown) {
+                        const parentTrigger = parentDropdown.querySelector('.dropdown-trigger');
+                        if (parentTrigger) parentTrigger.classList.add('active');
+
+                        parentDropdown.classList.add('dropdown-open');
+                    }
+                }
+            }
+        });
+
+        if (currentPath.toLowerCase().startsWith('/proyecto')) {
+            dropdowns.forEach(dropdown => dropdown.classList.add('dropdown-open'));
+            triggers.forEach(trigger => {
+                if (trigger.textContent.includes('Proyecto')) {
+                    trigger.classList.add('active');
+                }
+            });
         }
+    };
+
+    updateActiveState();
+
+    const observer = new MutationObserver(() => {
+        updateActiveState();
     });
+
+    observer.observe(document.body, { childList: true, subtree: true });
 });

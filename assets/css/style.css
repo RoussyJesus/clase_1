@@ -1,14 +1,10 @@
-/* ---
-   TEMA OSCURO PROFESIONAL (Paleta Violeta)
-   Un modo oscuro sutil, sin "brillo" neón.
---- */
+
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 body {
     font-family: 'Outfit', sans-serif;
-    /* Fondo oscuro: un gradiente de azul casi negro */
     background: linear-gradient(135deg, #0a101f, #05070f);
-    color: #e0e0e0; /* Texto por defecto es claro */
+    color: #e0e0e0; 
     margin: 0;
     padding: 0;
     overflow-x: hidden;
@@ -16,7 +12,7 @@ body {
 
 
 .app-header {
-    /* Gradiente de violeta sutil */
+   
     background: linear-gradient(270deg, #0d42d3, #5444ad, #0e42d3);
     background-size: 600% 600%;
     animation: headerGradient 10s ease infinite;
@@ -26,9 +22,9 @@ body {
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1.2px;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Sombra de texto normal */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); 
     
-    /* Borde sutil, sin brillo */
+  
     border-bottom: 4px solid #29b20f;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     
@@ -43,7 +39,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Efecto de brillo de cabecera eliminado */
+
 .app-header::after {
     display: none;
 }
@@ -55,10 +51,10 @@ body {
 
 
 .navigation {
-    /* La navegación es casi negra para mezclarse con el fondo */
+    
     background-color: #050a14;
     padding: 12px 0;
-    /* Sombra estándar */
+   
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
     position: sticky;
@@ -74,12 +70,12 @@ body {
 
 
 .nav-link {
-    background-color: transparent; /* Fondo transparente */
-    color: #f0f0f0; /* Color de texto claro */
+    background-color: transparent; 
+    color: #f0f0f0; 
     font-weight: 600;
     padding: 10px 20px;
     border-radius: 30px;
-    /* Borde gris oscuro sutil */
+    
     border: 2px solid #333;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
@@ -92,22 +88,21 @@ body {
 .nav-link::before { display: none; }
 
 .nav-link:hover {
-    background-color: #08e263; /* Acento Violeta */
+    background-color: #08e263; 
     color: #FFFFFF;
     transform: scale(1.1);
-    border-color: #9B59B6; /* Acento Violeta */
-    /* Sombra estándar */
+    border-color: #9B59B6; 
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 
 .nav-link.active {
-    background-color: #8E44AD; /* Violeta principal */
-    color: #FFFFFF; /* Texto claro */
+    background-color: #8E44AD; 
+    color: #FFFFFF; 
     font-weight: 700;
-    border-color: #8E44AD; /* Violeta principal */
+    border-color: #8E44AD; 
     transform: scale(1.08);
-    /* Sombra estándar */
+    
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -115,60 +110,60 @@ body {
 .page-container {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-around; */
-    justify-content: center; /* Centrado se ve mejor */
+    
+    justify-content: center; 
     gap: 25px;
     padding: 30px;
     margin: 0 auto;
-    max-width: 1400px; /* Un poco más de espacio */
+    max-width: 1400px; 
     animation: fadeIn 1s ease;
 }
 .input-group {
-margin-bottom: 20px; /* Más espacio */
+margin-bottom: 20px; 
 }
 .input-group label{
     display: block;
-    margin-bottom: 8px; /* Más espacio */
+    margin-bottom: 8px; 
     font-weight: bold;
-    color: #e0e0e0; /* Texto de etiqueta claro */
+    color: #e0e0e0; 
 }
 .input-field{
     width: 100%;
-    padding: 12px; /* Más padding */
+    padding: 12px; 
     box-sizing: border-box;
-    border: 1px solid #5f5f5f; /* Borde gris oscuro */
+    border: 1px solid #5f5f5f; 
     border-radius: 8px;
-    background-color: #1a202c; /* Fondo de input oscuro */
-    color: #f0f0f0; /* Texto de input claro */
+    background-color: #1a202c; 
+    color: #f0f0f0; 
     transition: all 0.3s ease;
 }
 
-/* :focus sutil, sin brillo */
+
 .input-field:focus {
     outline: none;
-    border-color: #9B59B6; /* Acento Violeta */
-    box-shadow: 0 0 5px rgba(158, 15, 214, 0.5); /* Halo sutil */
+    border-color: #9B59B6; 
+    box-shadow: 0 0 5px rgba(158, 15, 214, 0.5); 
 }
 
 .btn-generar{
-    background-color: #0bbd90; /* Violeta principal */
+    background-color: #0bbd90; 
     color: #eaf2ff;
     border: none;
-    padding: 12px 15px; /* Más padding */
-    border-radius: 8px; /* Bordes más redondeados */
+    padding: 12px 15px; 
+    border-radius: 8px; 
     cursor:pointer;
     width: 100%;
-    font-size: 1.1rem; /* Más grande */
+    font-size: 1.1rem; 
     font-weight: 600;
     transition: all 0.3s ease;
-    /* Sombra estándar */
+    
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 .btn-generar:hover{
-    /* Sombra estándar */
+    
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transform: scale(1.02);
-    background-color: #09ff67; /* Violeta más oscuro */
+    background-color: #09ff67; 
 }
 
 
@@ -180,15 +175,15 @@ margin-bottom: 20px; /* Más espacio */
 
 
 .content {
-    /* Fondo de tarjeta oscuro */
+    
     background-color: #0c162b;
     border-radius: 15px;
-    padding: 25px 30px; /* Más padding horizontal */
+    padding: 25px 30px;
     flex: 1;
     min-width: 350px;
-    max-width: 700px; /* Previene que las tarjetas sean muy anchas */
-    /* Borde y sombra sutil */
-    border: 1px solid #7A3B97; /* Borde violeta oscuro */
+    max-width: 700px; 
+    
+    border: 1px solid #7A3B97; 
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     
     transition: all 0.3s ease;
@@ -198,11 +193,11 @@ margin-bottom: 20px; /* Más espacio */
 
 .content:hover {
     transform: translateY(-8px);
-    /* Sombra estándar más intensa en hover */
+    
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-/* Efecto de brillo de tarjeta eliminado */
+
 .content::after {
     display: none;
 }
@@ -210,16 +205,16 @@ margin-bottom: 20px; /* Más espacio */
 
 .title {
     text-align: center;
-    /* Título con color lavanda */
-    color: #21cc69; /* Lavanda */
+   
+    color: #21cc69; 
     font-size: 22px;
     margin-top: 0;
-    margin-bottom: 25px; /* Más espacio */
-    border-bottom: 2px solid #9B59B6; /* Acento Violeta */
+    margin-bottom: 25px; 
+    border-bottom: 2px solid #9B59B6; 
     display: inline-block;
     padding-bottom: 4px;
     animation: fadeSlide 1s ease;
-    /* Sombra de texto eliminada */
+    
     text-shadow: none;
 }
 
@@ -228,11 +223,7 @@ margin-bottom: 20px; /* Más espacio */
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ---
-   ANIMACIONES DE TEXTO Y TÍTULO DE LA PÁGINA DE INICIO (SIMPLIFICADAS)
---- */
 
-/* Animación de "Pulso" Neón eliminada */
 @keyframes neon-text-pulse {
     from { text-shadow: none; }
     to { text-shadow: none; }
@@ -240,14 +231,14 @@ margin-bottom: 20px; /* Más espacio */
 
 .welcome-title {
     text-align: center;
-    color: #17a2ff; /* Lavanda Título */
-    font-size: 2rem; /* Más grande que un .title normal */
-    font-family: 'Righteous', sans-serif; /* Fuente Vistosa */
+    color: #17a2ff; 
+    font-size: 2rem; 
+    font-family: 'Righteous', sans-serif; 
     font-weight: 700;
     margin-top: 20px;
-    text-shadow: none; /* Sin brillo */
-    animation: none; /* Sin animación de pulso */
-    /* Asegura que ocupe el ancho completo */
+    text-shadow: none;
+    animation: none; 
+    
     width: 100%;
     margin-bottom: 20px;
 }
@@ -259,50 +250,51 @@ margin-bottom: 20px; /* Más espacio */
     margin-bottom: 30px;
     font-style: italic;
     width: 100%;
-    animation: none; /* Sin animación de brillo */
+    animation: none; 
 }
 
-/* Animación de "Brillo" Sutil eliminada */
+
 @keyframes neon-text-glow {
     from { text-shadow: none; }
     to { text-shadow: none; }
 }
 
-/* Animación para Gradiente de Texto eliminada */
+
 @keyframes text-gradient-shift {
     from { background-position: 0% 50%; }
     to { background-position: 0% 50%; }
 }
 
 .intro-text {
-    color: #e0e0e0; /* Color de texto normal */
+    color: #e0e0e0; 
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
-    /* Animación de gradiente eliminada */
 }
 
-/* Estilizamos la lista de "Qué aprenderás" */
 .intro-container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 20px;
 }
+
 .intro-image {
     width: 100%;
     max-width: 300px;
     height: auto;
     border-radius: 12px;
-    border: 1px solid #7A3B97; /* Borde violeta oscuro */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra estándar */
-    flex: 1; /* Permite que la imagen sea flexible */
+    border: 1px solid #7A3B97;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex: 1;
     min-width: 250px;
 }
+
 .intro-list {
-    flex: 2; /* La lista toma más espacio */
+    flex: 2;
     min-width: 300px;
 }
+
 .intro-list li {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -311,18 +303,17 @@ margin-bottom: 20px; /* Más espacio */
     position: relative;
     padding-left: 30px;
 }
-/* Viñeta de check violeta */
+
 .intro-list li::before {
-    content: "✓"; /* Ícono de check */
-    color: #9B59B6; /* Color Violeta */
+    content: "✓";
+    color: #9B59B6;
     font-weight: bold;
     position: absolute;
     left: 0;
     top: 0;
-    text-shadow: none; /* Sin brillo */
+    text-shadow: none;
 }
 
-/* REGLA para items de la lista de Fundamentos (sin animación) */
 .intro-list-animated li {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -330,88 +321,76 @@ margin-bottom: 20px; /* Más espacio */
     color: #e0e0e0;
     position: relative;
     padding-left: 30px;
-    animation: none; /* Sin animación de brillo */
+    animation: none;
 }
-/* Usamos la misma viñeta de check */
+
 .intro-list-animated li::before {
-    content: "✓"; /* Ícono de check */
-    color: #9B59B6; /* Color Violeta */
+    content: "✓";
+    color: #9B59B6;
     font-weight: bold;
     position: absolute;
     left: 0;
     top: 0;
-    text-shadow: none; /* Sin brillo */
+    text-shadow: none;
 }
 
-
-/* ---
-   ESTILOS PARA EL TEXTO DE MARKDOWN (Página.py / Tarea.py)
---- */
 .text-content {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #e0e0e0; /* Asegura texto claro */
-    margin-bottom: 20px; /* Espacio entre párrafos */
+    color: #e0e0e0;
+    margin-bottom: 20px;
 }
 
-/* Colorear el MathJax para que coincida con el tema */
 .text-content .MathJax {
-    color: #21cc69; /* Lavanda */
+    color: #21cc69;
     font-weight: bold;
-    text-shadow: none; /* Sin brillo */
+    text-shadow: none;
 }
 
-
-/* ---
-   ESTILOS para el contenedor de gráficos (Página de Inicio)
---- */
-/* NUEVA clase para el gráfico de espiral en el contenedor de intro */
 .intro-graph-item {
     width: 100%;
     max-width: 300px;
-    flex: 1; /* Permite que el gráfico sea flexible */
+    flex: 1;
     min-width: 250px;
 }
-/* Contenedor para múltiples gráficos */
+
 .graph-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
+
 .graph-item-half {
-    flex: 1; /* Dos gráficos uno al lado del otro */
+    flex: 1;
     min-width: 300px;
 }
+
 .graph-title, .closing-title {
-    color: #21cc69; /* Lavanda Título */
+    color: #21cc69;
     text-align: center;
     margin-bottom: 20px;
-    text-shadow: none; /* Sin brillo */
-    animation: none; /* Sin animación de pulso */
-    font-family: 'Righteous', sans-serif; /* <-- FUENTE AÑADIDA */
-    font-size: 1.5rem; /* 24px */
+    text-shadow: none;
+    animation: none;
+    font-family: 'Righteous', sans-serif;
+    font-size: 1.5rem;
 }
 
 .closing-text {
-    font-size: 1.2rem; /* Un poco más grande */
+    font-size: 1.2rem;
     line-height: 1.7;
     text-align: center;
-    max-width: 700px; /* Centrado y legible */
-    margin: 0 auto; /* Centrar el bloque de texto */
-    font-family: 'Righteous', sans-serif; /* <-- FUENTE AÑADIDA */
-
-    /* Animación de gradiente eliminada */
-    color: #e0e0e0; /* Color de texto normal */
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: 'Righteous', sans-serif;
+    color: #e0e0e0;
     background: none;
     -webkit-background-clip: unset;
     background-clip: unset;
     animation: none;
 }
 
-
 img {
     border-radius: 10px;
-    /* Sombra estándar */
     box-shadow: 0 3px 8px rgba(0,0,0,0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     z-index: 1;
@@ -419,10 +398,8 @@ img {
 
 img:hover {
     transform: scale(1.03);
-    /* Sombra estándar más intensa */
     box-shadow: 0 5px 12px rgba(0,0,0,0.25);
 }
-
 
 @media (max-width: 768px) {
     .nav-links {
@@ -432,7 +409,7 @@ img:hover {
 
     .content {
         width: 90%;
-        min-width: unset; /* Arreglo para móviles */
+        min-width: unset;
         padding: 20px;
     }
 
@@ -441,15 +418,10 @@ img:hover {
         padding: 20px;
     }
 }
-/* ---
-   ESTILOS ADICIONALES PARA LA PÁGINA "PROYECTO"
-   (Añadir al final de style.css)
---- */
 
-/* 1. Contenedor de Rejilla (Grid) */
 .page-container-grid {
     display: flex;
-    flex-wrap: wrap; /* Permite que se apilen en pantallas pequeñas */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 25px;
     padding: 30px;
@@ -458,7 +430,6 @@ img:hover {
     animation: fadeIn 0.6s ease-out;
 }
 
-/* 2. Tarjeta del Gráfico (70% del ancho) */
 .content-graph {
     background-color: var(--color-fondo-tarjeta);
     border-radius: 15px;
@@ -468,13 +439,11 @@ img:hover {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    
-    flex-grow: 2; /* Crece el doble que la barra lateral */
-    flex-basis: 60%; /* Intenta ocupar el 60-70% */
+    flex-grow: 2;
+    flex-basis: 60%;
     min-width: 350px;
 }
 
-/* 3. Barra Lateral (30% del ancho) */
 .content-sidebar {
     background-color: var(--color-fondo-tarjeta);
     border-radius: 15px;
@@ -484,7 +453,6 @@ img:hover {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    
     flex-grow: 1;
     flex-basis: 30%;
     min-width: 300px;
@@ -496,13 +464,85 @@ img:hover {
     box-shadow: 0 0 25px var(--color-sombra-hover);
 }
 
-
 @media (max-width: 900px) {
     .page-container-grid {
         flex-direction: column;
     }
     .content-graph,
     .content-sidebar {
-        flex-basis: 100%; 
+        flex-basis: 100%;
     }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 20;
+}
+
+.dropdown .nav-link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #0c162b;
+    min-width: 220px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    border: 1px solid #7A3B97;
+    border-radius: 12px;
+    padding: 10px 0;
+    margin-top: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 0 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent #7A3B97 transparent;
+}
+
+.dropdown-content a {
+    color: #e0e0e0;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(142, 68, 173, 0.2);
+    color: #08e263;
+    border-left: 3px solid #08e263;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .nav-link {
+    background-color: #8E44AD;
+    border-color: #8E44AD;
+    color: white;
+}
+.dropdown-content {
+    display: none;
+}
+
+.dropdown.dropdown-open .dropdown-content {
+    display: block;
 }
